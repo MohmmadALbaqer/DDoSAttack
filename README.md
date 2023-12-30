@@ -7,7 +7,7 @@ $ pip3 install -r requirements.txt
 $ python3 install.py
 # OR
 $ bash install.sh
-$ python3 Style.py
+$ python3 DDoSAttack.py
 
 ```
 
