@@ -1,0 +1,11 @@
+pip install cfscrape
+pip install httpx
+pip install asyncio
+pip install pysocks
+pip install socket
+pip install Thread
+pip install Style
+pip install Fore
+pip install colored
+pip install pyfiglet
+pip install requests
