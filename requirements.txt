@@ -1,0 +1,13 @@
+cfscrape
+httpx
+asyncio
+pysocks
+socket
+Thread
+Style
+Fore
+colored
+pyfiglet
+requests
+os
+sys
