@@ -1,3 +1,12 @@
+### the version For DDoS Attack V2.1
+```
+The tool has been improved to a good shape and solved problems with the addition of a 4-digit verification code in order to keep hackers away From script kids and improve interaction.
+```
+
+
+
+
+
 ### Installation (Kali Linux)
 
 ```
