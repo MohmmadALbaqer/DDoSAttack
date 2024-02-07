@@ -10,3 +10,6 @@ colored
 requests
 os
 sys
+colorama
+sqlite3
+json
