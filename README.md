@@ -44,14 +44,11 @@ $ python3 Chack.py
 
 
 ### SCREEN SHOT
-```
+
 ![Logo](screen shot chack.png)
-```
 
-```
 
-![Logo](screen shot DDoS.png)
-```
+
 
 
 
