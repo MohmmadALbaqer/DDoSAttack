@@ -45,7 +45,7 @@ $ python3 Chack.py
 
 ### SCREEN SHOT
 
-![Logo](screen shot chack.png)
+![Logo](chack.png)
 
 
 
