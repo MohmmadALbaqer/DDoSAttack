@@ -38,7 +38,7 @@ $ python3 DDoSAttack.py
 
 ### Chack wep site targer
 ```
-$ python3 Chack.py
+$ python3 chack.py
 ```
 
 
