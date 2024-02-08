@@ -31,4 +31,4 @@ for library in libraries_to_install:
 os.system("python -m venv venv")
 print("source venv/bin/activate")
 os.system("chmod +x DDoSAttack.py")
-os.system("chmod +x Check.py")
+os.system("chmod +x check.py")
