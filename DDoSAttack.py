@@ -53,8 +53,6 @@ def spin():
 
 spin()
 
-print(1*"\n")
-
 def check_internet_connection():
     try:
         response = requests.get('http://www.google.com', timeout=5)
@@ -120,10 +118,10 @@ colored_text = colored(text, random_color)
 print(colored_text)
 
 print(f'''
- {Fore.RED}<--------------------------------------------------------------------->
- {Fore.RED}|{Fore.GREEN} GitHub{Fore.WHITE} : {Fore.BLUE}MohmmadALbaqer {Fore.WHITE}|{Fore.YELLOW}   https://www.github.com/MohmmadALbaqer/  {Fore.RED}|
- {Fore.RED}|{Fore.GREEN} Instagram{Fore.WHITE} :{Fore.BLUE} r94xs {Fore.WHITE}      |{Fore.YELLOW}   https://www.instagram.comr94xs/         {Fore.RED}|
- {Fore.RED}+---------------------------------------------------------------------+
+ {Fore.RED}+------------------------------------------------------------------+
+ {Fore.RED}|{Fore.GREEN} GitHub{Fore.WHITE} : {Fore.BLUE}MohmmadALbaqer {Fore.WHITE}|{Fore.YELLOW} https://www.github.com/MohmmadALbaqer/ {Fore.RED}|
+ {Fore.RED}|{Fore.GREEN} Instagram{Fore.WHITE} :{Fore.BLUE} r94xs {Fore.WHITE}      |{Fore.YELLOW} https://www.instagram.comr94xs/        {Fore.RED}|
+ {Fore.RED}+------------------------------------------------------------------+
 {Style.RESET_ALL}''')
 
 
