@@ -1,25 +1,20 @@
-![Logo](Logo.png)
+![Logo](DDoS_Attack.jpg)
 
 
 ### Interface
 
 ```
-       .---.        .-----------
-      /     \  __  /    ------
-     / /     \(  )/    -----
-    //////   ' \/ `   ---
-   //// / // :    : ---
-  // /   /  /`    \'--
- //          //..\\
-        ====UU====UU====
-            '//||\\`
-              ''``
-·▄▄▄▄  ·▄▄▄▄        .▄▄ ·    ▄▄▄· ▄▄▄▄▄▄▄▄▄▄ ▄▄▄·  ▄▄· ▄ •▄ 
-██· ██ ██· ██  ▄█▀▄ ▐█ ▀.   ▐█ ▀█ •██  •██  ▐█ ▀█ ▐█ ▌▪█▌▄▌▪
-▐█▪ ▐█▌▐█▪ ▐█▌▐█▌.▐▌▄▀▀▀█▄  ▄█▀▀█  ▐█.▪ ▐█.▪▄█▀▀█ ██ ▄▄▐▀▀▄·
-██. ██ ██. ██ ▐█▌.▐▌▐█▄▪▐█  ▐█▪ ▐▌ ▐█▌· ▐█▌·▐█▪ ▐▌▐███▌▐█.█▌
-▀▀▀▀▀• ▀▀▀▀▀•  ▀█▄▀▪ ▀▀▀▀    ▀  ▀  ▀▀▀  ▀▀▀  ▀  ▀ ·▀▀▀ ·▀  ▀
-
+                                                                                                                                                                      
+       .---.        .-----------                                                                                                                                      
+      /     \  __  /    ------                                                                                                                                        
+     / /     \(  )/    -----                                                                                                                                          
+    //////   ' \/ `   ---    ____  ____          ____       _   _   _             _                                                                                   
+   //// / // :    : ---     |  _ \|  _ \   ___  / ___|     / \ | |_| |_ __ _  ___| | __                                                                               
+  // /   /  /`    '--       | | | | | | | / _ \ \___ \    / _ \| __| __/ _` |/ __| |/ /                                                                               
+ //          //..\\         | |_| | |_| || (0) | ___) |  / ___ \ |_| || (_| | (__|   <                                                                                
+        ====UU====UU====    |____/|____/  \_^_/ |____/  /_/   \_\__|\__\__,_|\___|_|\_\                                                                               
+            '//||\\`                                                                                                                                                  
+              ''``    
 ```
 
 
@@ -84,12 +79,8 @@
 $ git clone https://github.com/MohmmadALbaqer/DDoSAttack.git
 $ cd DDoSAttack
 $ pip3 install -r requirements.txt
-$ python3 -m venv path/to/venv
-$ python -m venv venv
-$ source venv/bin/activate
-$ python3 install.py
-$ python3 DDoSAttack.py
-
+$ bash activation.sh
+$ sudo python3 DDoSAttack.py
 ```
 
 
@@ -98,23 +89,13 @@ $ python3 DDoSAttack.py
 $ python3 chack.py
 ```
 
-
-
 ### SCREEN SHOT
-![Logo](DDoS.png)
+![Logo](Screenshot1.png)
 
 
-![Logo](chack.png)
+![Logo](Screenshot2.png)
 
 
-
-
-
-
-### Know about a tool DDoS Attack
-```
-$ python3 About.py
-```
 
 ## [~] Find Me on :
 
