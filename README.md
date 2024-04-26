@@ -85,6 +85,8 @@ $ git clone https://github.com/MohmmadALbaqer/DDoSAttack.git
 $ cd DDoSAttack
 $ pip3 install -r requirements.txt
 $ python3 -m venv path/to/venv
+$ python -m venv venv
+$ source venv/bin/activate
 $ python3 install.py
 $ python3 DDoSAttack.py
 
