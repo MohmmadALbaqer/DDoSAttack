@@ -68,7 +68,7 @@ def main():
     if user_input == activation_code:
         print(f"{sign} Activation successful You can now proceed.{W}")
     else:
-        print(f"{Y}[{R} ERROR{Y}]{R} Incorrect activation code. Exiting...{W}")
+        print(f"{Y}[{R}ERROR{Y}]{R} Incorrect activation code Exiting...{W}")
         sys.exit()
 
 if __name__ == "__main__":
@@ -88,7 +88,7 @@ def spin():
 
     sys.stdout.write("\r")
     sys.stdout.flush()
-    done_message = colored("[+] Your Internet connection has been verified", 'yellow', attrs=['bold'])
+    done_message = colored("[+] Your Internet connection has been verified.", 'yellow', attrs=['bold'])
     sys.stdout.write("\033[K") 
     print(done_message)
     time.sleep(1)
@@ -170,7 +170,7 @@ print(fr'''{Y}
 
 text = f"{sign} For more write a command{W} \"{Y}[help{Y}]{W}\"" 
 
-print(f"{sign} if exit press {Y}[Ctrl {W}+{Y} C]{W} to Exit.{W}")
+print(f"{sign} if exit press {Y}[Ctrl {W}+{Y} C]{W}to Exit.{W}")
 
 start_index = text.find("help")
 if start_index != -1:
@@ -258,8 +258,8 @@ while True:
 
 {Back.RED}{W}  It targets content filtering services that generate huge traffic. {Style.RESET_ALL}''')
         print(1*"\n")
-        host = input(f"{Fore.GREEN}[+] Url For Attack: {Y}")
-        num = int(input(f"{Fore.GREEN}[+] Enter thread: {Y}"))
+        host = input(f"{Enter} Url For Attack: {Y}")
+        num = int(input(f"{Enter} Enter thread: {Y}"))
         print(f"{sign} if exit press {Y}[Ctrl {W}+{Y} C]{W}to Exit.{W}")
         break
     elif cmd == "HTTP":
@@ -272,8 +272,8 @@ while True:
          
 {Back.RED}{W} Targets a web service to increase traffic. {Style.RESET_ALL}''')
         print(1*"\n")
-        host2 = input(f"{Fore.GREEN}[+] Url For Attack: {Y}")
-        num2 = int(input(f"{Fore.GREEN}[+] Enter thread: {Y}"))
+        host2 = input(f"{Enter} Url For Attack: {Y}")
+        num2 = int(input(f"{Enter} Enter thread: {Y}"))
         print(f"{sign} if exit press {Y}[Ctrl {W}+{Y} C]{W}to Exit.{W}")
         break
     elif cmd == "socks":
